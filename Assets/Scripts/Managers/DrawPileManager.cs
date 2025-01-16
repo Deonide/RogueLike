@@ -7,11 +7,14 @@ using Shuffle;
 
 public class DrawPileManager : MonoBehaviour
 {
-    public List<Card> m_drawPile = new List<Card>();
+    public List<Card> m_currentDeck = new List<Card>();
+    [SerializeField]
+    private List<Card> m_starterDeck = new List<Card>();
+
 
     public int m_currentIndex = 0;
-    public int m_startingHandSize = 3;
-    public int m_maxHandSize;
+    public int m_startingHandSize = 5;
+    public int m_maxHandSize = 10;
     public int m_currentHandSize;
 
 
@@ -23,6 +26,7 @@ public class DrawPileManager : MonoBehaviour
     private void Start()
     {
         m_handManager = FindFirstObjectByType<HandManager>();
+        MakeDrawPile(m_starterDeck);
     }
 
     public void DrawCardsForTurn()
@@ -43,8 +47,8 @@ public class DrawPileManager : MonoBehaviour
 
     public void MakeDrawPile(List<Card> cardsToAdd)
     {
-        m_drawPile.AddRange(cardsToAdd);
-        Utility.Shuffle(m_drawPile);
+        m_currentDeck.AddRange(cardsToAdd);
+        Utility.Shuffle(m_currentDeck);
         UpdateDrawPileCount();
     }
 
@@ -56,20 +60,20 @@ public class DrawPileManager : MonoBehaviour
 
     public void DrawCard(HandManager handManager)
     {
-        if (m_drawPile.Count == 0)
+        if (m_currentDeck.Count == 0)
         {
             RefillDeckFromDiscard();
         }
 
         if (m_currentHandSize < m_maxHandSize)
         {
-            Card nextCard = m_drawPile[m_currentIndex];
+            Card nextCard = m_currentDeck[m_currentIndex];
             handManager.AddCardToHand(nextCard);
-            m_drawPile.RemoveAt(m_currentIndex);
+            m_currentDeck.RemoveAt(m_currentIndex);
             UpdateDrawPileCount();
-            if(m_drawPile.Count > 0)
+            if(m_currentDeck.Count > 0)
             {
-                m_currentIndex = (m_currentIndex + 1) % m_drawPile.Count;
+                m_currentIndex = (m_currentIndex + 1) % m_currentDeck.Count;
             }
         }
     }
@@ -83,16 +87,14 @@ public class DrawPileManager : MonoBehaviour
 
         if(m_discardManager != null && m_discardManager.m_discardCardsCount > 0)
         {
-            m_drawPile = m_discardManager.PullAllFromDiscard();
-            Utility.Shuffle(m_drawPile);
+            m_currentDeck = m_discardManager.PullAllFromDiscard();
+            Utility.Shuffle(m_currentDeck);
             m_currentIndex = 0;
         }
     }
 
     private void UpdateDrawPileCount()
     {
-        m_drawPileCounter.text = m_drawPile.Count.ToString();
-
+        m_drawPileCounter.text = m_currentDeck.Count.ToString();
     }
-
 }
