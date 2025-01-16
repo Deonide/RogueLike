@@ -10,8 +10,6 @@ public class DeckManager : MonoBehaviour
     public int m_maxHandSize = 10;
     public int m_currentHandSize;
 
-
-
     private HandManager m_handManager;
     private DrawPileManager m_drawPileManager;
     private bool m_startBattleRun = true;
@@ -49,7 +47,7 @@ public class DeckManager : MonoBehaviour
     public void BattleSetUp()
     {
         m_handManager.BattleSetup(m_maxHandSize);
-        m_drawPileManager.MakeDrawPile(m_allCards);
+        /*        m_drawPileManager.MakeDrawPile(m_allCards);*/
         m_drawPileManager.BattleSetup(m_startingHandSize, m_maxHandSize);
         m_startBattleRun = false;  
     }

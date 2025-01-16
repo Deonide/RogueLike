@@ -17,15 +17,19 @@ public class CardDisplay : MonoBehaviour
 
     [Header("TMPRO")]
     [SerializeField]
-    private TMP_Text m_cost;
+    public TMP_Text m_cost;
     [SerializeField]
     private TMP_Text m_name;
     [SerializeField]
     private TMP_Text m_type;
     [SerializeField]
-    private TMP_Text m_damage;
+    private TMP_Text m_description;
+
+
+/*    [SerializeField]
+    public TMP_Text m_damage;
     [SerializeField]
-    private TMP_Text m_heal;
+    public TMP_Text m_armor;*/
 
 
     [Header("Scriptable Object")]
@@ -45,10 +49,12 @@ public class CardDisplay : MonoBehaviour
         m_cost.text = m_cardData.m_cardCost.ToString();
         //Card type
         m_type.text = m_cardData.m_cardType.ToString();
-        //Card damage
+        //Card description
+/*        m_description.text = m_cardData.m_cardDescription.ToString();*/
+/*        //Card damage
         m_damage.text = m_cardData.m_cardDamage.ToString();
         //Card healing
-        m_heal.text = m_cardData.m_cardHeal.ToString();
+        m_heal.text = m_cardData.m_cardHeal.ToString();*/
         //Card image
         m_cardImage.sprite = m_cardData.m_cardSprite;
 

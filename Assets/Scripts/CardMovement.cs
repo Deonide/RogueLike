@@ -1,3 +1,4 @@
+using ScriptableCard;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -41,6 +42,9 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
     [SerializeField]
     private bool m_needUpdateCardPlayPosition = false;
 
+    [SerializeField]
+    private LayerMask m_enemyLayerMask;
+
     //RectTransform of card prefab
     private RectTransform m_rectTransform;
     //Parent Canvas
@@ -54,11 +58,21 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
     private Vector3 m_originalPosition;
 
 
+    private Card m_cardData;
+    private CardDisplay m_cardDisplay;
+    private HandManager m_handManager;
+    private DiscardManager m_discardManager;
+    private Player m_player;
     private void Awake()
     {
-        m_rectTransform = GetComponent<RectTransform>();
-        m_canvas = GetComponentInParent<Canvas>();
+        m_handManager = FindFirstObjectByType<HandManager>();
+        m_discardManager = FindFirstObjectByType<DiscardManager>();
+        m_player = FindFirstObjectByType<Player>();
+        m_cardDisplay = GetComponent<CardDisplay>();
 
+        m_rectTransform = GetComponent<RectTransform>();
+        
+        m_canvas = GetComponentInParent<Canvas>();
         if (m_canvas != null)
         {
             m_canvasRectTranform = m_canvas.GetComponent<RectTransform>();
@@ -187,14 +201,50 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
         m_rectTransform.localPosition = m_playPosition;
         m_rectTransform.localRotation = Quaternion.identity;
 
+        if (!Input.GetMouseButton(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
+
+            if(m_player.m_currentEnergy >= m_cardDisplay.m_cardData.m_cardCost)
+            {
+                if (hit.collider != null && hit.collider.CompareTag("Enemy"))
+                {
+                    if(m_cardDisplay.m_cardData.m_cardType == CardType.Damage)
+                    {
+
+                    }
+                    else if(m_cardDisplay.m_cardData.m_cardType == CardType.Debuff)
+                    {
+                        
+                    }
+                    CardPlayed();
+                }
+
+                else if (hit.collider != null && hit.collider.CompareTag("Player") && m_cardDisplay.m_cardData.m_cardType == CardType.Utility)
+                {
+                    CardPlayed();
+                }
+            }
+        }
+
         if(Input.mousePosition.y < m_cardPlay.y)
         {
             m_currentState = 2;
             m_playArrow.SetActive(false);
-            DiscardManager discardManager = FindFirstObjectByType<DiscardManager>();
-            discardManager.AddToDiscard(GetComponent<CardDisplay>().m_cardData);
-            Destroy(gameObject);
         }
+    }
+
+    private void CardPlayed()
+    {
+        m_handManager = FindFirstObjectByType<HandManager>();
+
+        m_player.m_currentEnergy -= m_cardDisplay.m_cardData.m_cardCost;
+        m_handManager.m_cardsInHand.Remove(gameObject);
+        m_handManager.UpdateHandVisuals();
+        DiscardManager discardManager = FindFirstObjectByType<DiscardManager>();
+        discardManager.AddToDiscard(GetComponent<CardDisplay>().m_cardData);
+        Destroy(gameObject);
     }
 
     private void UpdateCardPlayPostion()

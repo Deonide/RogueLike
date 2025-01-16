@@ -593,8 +593,7 @@ MonoBehaviour:
   m_cost: {fileID: 1070274462691601942}
   m_name: {fileID: 8965391116605299476}
   m_type: {fileID: 7498458614180482089}
-  m_damage: {fileID: 3707452121859532467}
-  m_heal: {fileID: 4107228715886523420}
+  m_description: {fileID: 0}
   m_cardData: {fileID: 11400000, guid: b879ab58d692e6141ae9f79a1ad5b519, type: 2}
 --- !u!114 &5591685313057466414
 MonoBehaviour:
@@ -622,6 +621,9 @@ MonoBehaviour:
   m_playPositionXMultiplier: -16.26
   m_needUpdatePlayPosition: 1
   m_needUpdateCardPlayPosition: 0
+  m_enemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &1196747879787041883
 GameObject:
   m_ObjectHideFlags: 0
