@@ -32,15 +32,11 @@ public class HandManager : MonoBehaviour
 
             //Set the CardData of the instantiated card
             newCard.GetComponent<CardDisplay>().m_cardData = cardData;
+            newCard.GetComponent<CardDisplay>().UpdateCardDisplay();
 
             //Updates hand visuals.
             UpdateHandVisuals();
         }
-    }
-
-    private void Update()
-    {
-        /*UpdateHandVisuals();*/
     }
 
     public void BattleSetup(int setMaxHandSize)
@@ -48,7 +44,7 @@ public class HandManager : MonoBehaviour
         m_maxHandSize = setMaxHandSize;
     }
 
-    private void UpdateHandVisuals() 
+    public void UpdateHandVisuals() 
     { 
         int cardCount = m_cardsInHand.Count;
 
