@@ -19,8 +19,10 @@ namespace ScriptableCard{
 
         public int m_cardCost;
         public int m_cardDamage;
-        public int m_cardHeal;
-
+        public int m_cardArmor;
+        public int m_poisonValue;
+        public int m_weak;
+        public int m_vulnerable;
 
         public Sprite m_cardSprite;
     }
