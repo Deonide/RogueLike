@@ -44,3 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc76ff44352a99e46b70d0e251359865, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_muteAudio: 0
+  m_fontList:
+  - {fileID: 11400000, guid: 7889dfadaf64a074d957dcce878fa38d, type: 2}
+  - {fileID: 11400000, guid: 7188296fdd24f1a499a3307748d44b4b, type: 2}
+  - {fileID: 11400000, guid: 7889dfadaf64a074d957dcce878fa38d, type: 2}
+  - {fileID: 11400000, guid: 9e7b2e80e2281274ba94b922835bc498, type: 2}
+  - {fileID: 11400000, guid: 9e7b2e80e2281274ba94b922835bc498, type: 2}
