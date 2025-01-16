@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7beb430a69146e40a1cd8d3008af5a6, type: 3}
-  m_Name: Heal
+  m_Name: Armor
   m_EditorClassIdentifier: 
   m_cardName: Heal
   m_cardDescription: Heal 4
-  m_cardType: 0
+  m_cardType: 1
   m_cardCost: 1
   m_cardDamage: 0
   m_cardHeal: 4
