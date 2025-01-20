@@ -10,12 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7beb430a69146e40a1cd8d3008af5a6, type: 3}
-  m_Name: Armor
+  m_Name: Rally
   m_EditorClassIdentifier: 
-  m_cardName: Heal
-  m_cardDescription: Heal 4
+  m_cardName: Rally
+  m_cardDescription: Gain armor, and boosting your further armor gain
   m_cardType: 1
-  m_cardCost: 1
+  m_cardSecondaryType: 2
+  m_cardRarity: 0
+  m_cardCost: 0
   m_cardDamage: 0
-  m_cardHeal: 4
+  m_cardArmor: 8
+  m_poisonValue: 0
+  m_weak: 0
+  m_vulnerable: 0
+  m_strengthBuff: 0
+  m_utilityBuff: 1
+  m_shopValue: 0
   m_cardSprite: {fileID: 0}

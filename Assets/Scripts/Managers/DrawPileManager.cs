@@ -8,24 +8,21 @@ using Shuffle;
 public class DrawPileManager : MonoBehaviour
 {
     public List<Card> m_currentDeck = new List<Card>();
-    [SerializeField]
-    private List<Card> m_starterDeck = new List<Card>();
-
+    public List<Card> m_starterDeck = new List<Card>();
 
     public int m_currentIndex = 0;
     public int m_startingHandSize = 5;
     public int m_maxHandSize = 10;
     public int m_currentHandSize;
 
-
     private HandManager m_handManager;
     private DiscardManager m_discardManager;
     public TextMeshProUGUI m_drawPileCounter;
 
-
     private void Start()
     {
         m_handManager = FindFirstObjectByType<HandManager>();
+        m_discardManager = FindFirstObjectByType<DiscardManager>();
         MakeDrawPile(m_starterDeck);
     }
 
@@ -43,6 +40,14 @@ public class DrawPileManager : MonoBehaviour
         {
             m_currentHandSize = m_handManager.m_cardsInHand.Count;
         }
+    }
+
+    public void ResetDeck()
+    {
+        m_currentDeck.Clear();
+        m_discardManager.m_discardedCards.Clear();
+        m_discardManager.UpdateDiscardCount();
+        m_handManager.m_cardsInHand.Clear();
     }
 
     public void MakeDrawPile(List<Card> cardsToAdd)
@@ -78,7 +83,7 @@ public class DrawPileManager : MonoBehaviour
         }
     }
 
-    private void RefillDeckFromDiscard()
+    public void RefillDeckFromDiscard()
     {
         if(m_discardManager == null)
         {
@@ -88,6 +93,21 @@ public class DrawPileManager : MonoBehaviour
         if(m_discardManager != null && m_discardManager.m_discardCardsCount > 0)
         {
             m_currentDeck = m_discardManager.PullAllFromDiscard();
+            Utility.Shuffle(m_currentDeck);
+            m_currentIndex = 0;
+        }
+    }
+
+    public void RestartDeckAtNewWave()
+    {
+        if (m_discardManager == null)
+        {
+            m_discardManager = FindFirstObjectByType<DiscardManager>();
+        }
+
+        if (m_discardManager != null && m_discardManager.m_discardCardsCount > 0)
+        {
+            m_currentDeck.AddRange(m_discardManager.PullAllFromDiscard());
             Utility.Shuffle(m_currentDeck);
             m_currentIndex = 0;
         }

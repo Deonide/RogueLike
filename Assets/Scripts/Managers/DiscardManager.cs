@@ -5,8 +5,7 @@ using TMPro;
 
 public class DiscardManager : MonoBehaviour
 {
-    [SerializeField]
-    private List<Card> m_discardedCards = new List<Card>();
+    public List<Card> m_discardedCards = new List<Card>();
 
     public TextMeshProUGUI m_discardCount;
 
@@ -17,7 +16,7 @@ public class DiscardManager : MonoBehaviour
         UpdateDiscardCount();
     }
 
-    private void UpdateDiscardCount()
+    public void UpdateDiscardCount()
     {
         m_discardCount.text = m_discardedCards.Count.ToString();
         m_discardCardsCount = m_discardedCards.Count;
@@ -64,6 +63,7 @@ public class DiscardManager : MonoBehaviour
     {
         if(m_discardCardsCount > 0)
         {
+            Debug.Log("add to deck");
             List<Card> cardsToReturn = new List<Card>(m_discardedCards);
             m_discardedCards.Clear();
             UpdateDiscardCount();

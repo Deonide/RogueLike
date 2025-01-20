@@ -1,0 +1,6 @@
+
+
+interface IPickUpAble
+{
+    void PickUp();
+}

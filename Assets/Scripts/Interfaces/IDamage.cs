@@ -1,8 +1,4 @@
-
-using System;
-
 interface IDamageble
 {
-    void Damage();
-
+    int Damage(int damage);
 }

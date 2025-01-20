@@ -6,10 +6,17 @@ public class GameManager : MonoBehaviour
     public OptionsManager m_optionsManager { get; private set; }
     public AudioManager m_audioManager { get; private set; }
     public DeckManager m_deckManager { get; private set; }
+    private DrawPileManager m_drawPileManager;
+    private Player m_player;
+    public bool m_playerTurn = true;
+    public bool m_managersSet;
 
-    private int m_currentWave;
+    public int m_currentWave;
 
+    public GameObject m_winScreen;
+    public GameObject m_loseScreen;
 
+    #region Initialize
     private void Awake()
     {
         if (Instance == null)
@@ -22,6 +29,10 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        m_player = FindFirstObjectByType<Player>();
+        m_winScreen.SetActive(false);
+        m_loseScreen.SetActive(false);
     }
 
     private void InitializaManagers()
@@ -29,8 +40,9 @@ public class GameManager : MonoBehaviour
         m_optionsManager = GetComponentInChildren<OptionsManager>();
         m_audioManager = GetComponentInChildren<AudioManager>();
         m_deckManager = GetComponentInChildren<DeckManager>();
+        m_drawPileManager = FindFirstObjectByType<DrawPileManager>();
 
-        if(m_optionsManager == null)
+        if (m_optionsManager == null)
         {
             GameObject prefab = Resources.Load<GameObject>("Prefabs/OptionsManager");
             if(prefab == null)
@@ -71,6 +83,27 @@ public class GameManager : MonoBehaviour
                 m_deckManager = GetComponentInChildren<DeckManager>();
             }
         }
+
+        m_optionsManager.UpdateFont();
+    }
+    #endregion
+
+    public void EndTurn()
+    {
+        m_player.DebuffsActivate();
     }
 
+    public void EnemyTurn()
+    {
+        m_playerTurn = false;
+
+    }
+
+    public void ResetWorld()
+    {
+        m_drawPileManager.ResetDeck();
+        m_drawPileManager.MakeDrawPile(m_drawPileManager.m_starterDeck);
+        m_player.ResetPlayerValues();
+        m_currentWave = 0;
+    }
 }

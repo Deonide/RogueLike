@@ -25,13 +25,6 @@ public class CardDisplay : MonoBehaviour
     [SerializeField]
     private TMP_Text m_description;
 
-
-/*    [SerializeField]
-    public TMP_Text m_damage;
-    [SerializeField]
-    public TMP_Text m_armor;*/
-
-
     [Header("Scriptable Object")]
     public Card m_cardData;
 
@@ -50,19 +43,8 @@ public class CardDisplay : MonoBehaviour
         //Card type
         m_type.text = m_cardData.m_cardType.ToString();
         //Card description
-/*        m_description.text = m_cardData.m_cardDescription.ToString();*/
-/*        //Card damage
-        m_damage.text = m_cardData.m_cardDamage.ToString();
-        //Card healing
-        m_heal.text = m_cardData.m_cardHeal.ToString();*/
+        m_description.text = m_cardData.m_cardDescription.ToString();
         //Card image
         m_cardImage.sprite = m_cardData.m_cardSprite;
-
-
-
-        if(m_cardData.m_cardType == CardType.Damage)
-        {
-            m_cardBackground = m_backgrounds[0];
-        }
     }
 }

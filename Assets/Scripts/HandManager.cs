@@ -19,24 +19,39 @@ public class HandManager : MonoBehaviour
 
     //Hold a list of card objects in hand.
     public List<GameObject> m_cardsInHand = new List<GameObject>();
-    
+
+    public GameObject m_newCard;
 
     public void AddCardToHand(Card cardData)
     {
         if (m_cardsInHand.Count < m_maxHandSize)
         {
             //Instantiate the card.
-            GameObject newCard = Instantiate(m_cardPrefab, m_handTransform.position, Quaternion.identity, m_handTransform);
+            m_newCard = Instantiate(m_cardPrefab, m_handTransform.position, Quaternion.identity, m_handTransform);
             //Adds the new instantiated card to hand.
-            m_cardsInHand.Add(newCard);
+            m_cardsInHand.Add(m_newCard);
 
             //Set the CardData of the instantiated card
-            newCard.GetComponent<CardDisplay>().m_cardData = cardData;
-            newCard.GetComponent<CardDisplay>().UpdateCardDisplay();
+            m_newCard.GetComponent<CardDisplay>().m_cardData = cardData;
+            m_newCard.GetComponent<CardDisplay>().UpdateCardDisplay();
 
             //Updates hand visuals.
             UpdateHandVisuals();
         }
+    }
+
+    public void DiscardHand()
+    {
+        foreach (GameObject game in m_cardsInHand)
+        {
+            m_cardsInHand.Remove(game);
+            UpdateHandVisuals();
+            DiscardManager discardManager = FindFirstObjectByType<DiscardManager>();
+            discardManager.AddToDiscard(game.GetComponent<CardDisplay>().m_cardData);
+            Destroy(game);
+            UpdateHandVisuals();
+        }
+
     }
 
     public void BattleSetup(int setMaxHandSize)

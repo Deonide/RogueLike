@@ -13,12 +13,17 @@ MonoBehaviour:
   m_Name: Venomous Strike
   m_EditorClassIdentifier: 
   m_cardName: Venomous Strike
-  m_cardDescription: Apply 5 Poison
-  m_cardType: 2
+  m_cardDescription: Deal 6 damage, and apply 5 Poison
+  m_cardType: 0
+  m_cardSecondaryType: 3
+  m_cardRarity: 0
   m_cardCost: 2
-  m_cardDamage: 3
+  m_cardDamage: 6
   m_cardArmor: 0
   m_poisonValue: 5
   m_weak: 0
   m_vulnerable: 0
-  m_cardSprite: {fileID: 6877422041457898792, guid: ac112ebc19a041c4a8b83b7012b3ba03, type: 3}
+  m_strengthBuff: 0
+  m_utilityBuff: 0
+  m_shopValue: 0
+  m_cardSprite: {fileID: 0}
