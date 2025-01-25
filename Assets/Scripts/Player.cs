@@ -3,24 +3,17 @@ using UnityEngine;
 
 public class Player : Character
 {
-    [SerializeField]
-    private TMP_Text m_moneyText;
-    [SerializeField]
-    private TMP_Text m_healthText;
-    [SerializeField]
-    private TMP_Text m_armorText;
-    [SerializeField]
-    private GameObject m_armorUI;
 
 
-    private int m_startingMoney = 50;
-    public int m_money;
-
+    [Header("Energy")]
     public int m_currentEnergy;
     public int m_energyLevel = 3;
 
-    public int m_maxHealth = 50;
-    public int m_startingHealth = 50;
+    [Header("Money")]
+    public int m_money;
+    private int m_startingMoney = 250;
+
+
 
     private DrawPileManager m_drawPileManager;
     private void Start()
@@ -28,14 +21,20 @@ public class Player : Character
         m_money = m_startingMoney;
         m_currentHealth = m_maxHealth;
         m_drawPileManager = FindFirstObjectByType<DrawPileManager>();
-        UpdateText();
+        GameManager.Instance.m_uIManager.UpdateText();
     }
 
     #region Armor + Health
     public void IncreaseArmor(int armorIncrease)
     {
         m_armor += armorIncrease;
-        UpdateText();
+        GameManager.Instance.m_uIManager.UpdateText();
+    }
+
+    public void DecreaseArmor(int damage)
+    {
+        m_armor -= damage;
+        GameManager.Instance.m_uIManager.UpdateText();
     }
 
     public void ResetArmor()
@@ -47,34 +46,28 @@ public class Player : Character
     {
         m_maxHealth += 10;
         m_currentHealth += 10;
-        UpdateText();
+        GameManager.Instance.m_uIManager.UpdateText();
     }
     #endregion
 
-    void Update()
+    protected override void Update()
     {
+        base.Update();
         if(m_currentHealth <= 0)
         {
             GameManager.Instance.m_loseScreen.SetActive(true);
-        }
-
-        if(m_armor > 0)
-        {
-            m_armorUI.SetActive(true);
-        }
-        else
-        {
-            m_armorUI.SetActive(false);
         }
     }
 
     public void StartPlayerTurn()
     {
+        GameManager.Instance.m_gameScreen.SetActive(true);
         if(m_currentEnergy < m_energyLevel)
         {
             m_currentEnergy = m_energyLevel;
         }
         m_drawPileManager.DrawCardsForTurn();
+        GameManager.Instance.m_uIManager.UpdateText();
     }
 
     public void ResetPlayerBuffs()
@@ -88,13 +81,5 @@ public class Player : Character
         m_maxHealth = m_startingHealth;
         m_currentHealth = m_startingHealth;
         m_money = m_startingMoney;
-    }
-
-    //Seperate functions?
-    private void UpdateText()
-    {
-        m_healthText.text = m_currentHealth.ToString() + " / " + m_maxHealth.ToString();
-        m_moneyText.text = m_money.ToString();
-        m_armorText.text = m_armor.ToString();
     }
 }

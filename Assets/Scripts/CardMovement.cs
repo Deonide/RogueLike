@@ -207,18 +207,16 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
 
             if(m_player.m_currentEnergy >= m_cardDisplay.m_cardData.m_cardCost)
             {
-        
                 if (hit.collider != null && hit.collider.CompareTag("Enemy"))
                 {
                     EnemyBase enemyScript = hit.collider.GetComponent<EnemyBase>();
                     if(m_cardDisplay.m_cardData.m_cardType == CardType.Damage)
                     {
-                        if (m_player.m_isWeak == true)
+                        #region Damage
+                        if (m_player.m_isWeak == true && enemyScript.m_isVulnerable == true)
                         {
-                            //If the player is weak the player deals 25% less damage.
-                            int damage = Mathf.RoundToInt((m_cardDisplay.m_cardData.m_cardDamage + m_player.m_strength)  * 0.75f);
-                            enemyScript.Damage(damage);
-                            
+                            //Deals damage equal to the cards damage.
+                            enemyScript.Damage(m_cardDisplay.m_cardData.m_cardDamage + m_player.m_strength);
                         }
                         else if(enemyScript.m_isVulnerable == true)
                         {
@@ -226,20 +224,38 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
                             int damage = Mathf.RoundToInt((m_cardDisplay.m_cardData.m_cardDamage + m_player.m_strength) * 1.25f);
                             enemyScript.Damage(damage);
                         }
-                        else if(m_player.m_isWeak == true && enemyScript.m_isVulnerable == true)
+                        else if(m_player.m_isWeak == true )
                         {
-                            //If the player is weakend and the enemy is vulnerable is cancels each other out.
-                            enemyScript.Damage(m_cardDisplay.m_cardData.m_cardDamage + m_player.m_strength);
+                            //If the player is weak the player deals 25% less damage.
+                            int damage = Mathf.RoundToInt((m_cardDisplay.m_cardData.m_cardDamage + m_player.m_strength) * 0.75f);
+                            Debug.Log(damage);
+                            enemyScript.Damage(damage);
                         }
                         else
                         {
-                            //Deals damage equal to the cards damage.
                             enemyScript.Damage(m_cardDisplay.m_cardData.m_cardDamage + m_player.m_strength);
                         }
-
-                        if(enemyScript.m_spikeValue > 0)
+                        #endregion
+                        #region Secondary Effect
+                        if (m_cardDisplay.m_cardData.m_cardSecondaryType == SecondaryType.Poison)
+                        {
+                            //Increases poisonValue of the enemy
+                            enemyScript.m_poisonValue += m_cardDisplay.m_cardData.m_poisonValue;
+                        }
+                        else if(m_cardDisplay.m_cardData.m_cardSecondaryType == SecondaryType.Armor)
+                        {
+                            m_player.IncreaseArmor(m_cardDisplay.m_cardData.m_cardArmor + m_player.m_utility);
+                        }
+                        else if(m_cardDisplay.m_cardData.m_cardSecondaryType == SecondaryType.Debuff)
+                        {
+                            enemyScript.m_weakValue += m_cardDisplay.m_cardData.m_weak;
+                            enemyScript.m_vulnerableValue += m_cardDisplay.m_cardData.m_vulnerable;
+                        }
+                        #endregion
+                        if (enemyScript.m_spikeValue > 0)
                         {
                             m_player.Damage(enemyScript.m_spikeValue);
+                            enemyScript.ArmorCheck(enemyScript.m_spikeValue);
                         }
 
                         CardPlayed();
@@ -250,17 +266,17 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
                         enemyScript.m_poisonValue += m_cardData.m_poisonValue;
                         enemyScript.m_weakValue += m_cardData.m_weak;
                         enemyScript.m_vulnerableValue += m_cardData.m_vulnerable;
+                        CardPlayed();
                     }
                 }
 
                 else if (hit.collider != null && hit.collider.CompareTag("Player") && m_cardDisplay.m_cardData.m_cardType == CardType.Utility)
                 {
                     m_player.IncreaseArmor(m_cardDisplay.m_cardData.m_cardArmor + m_player.m_utility);
+                    m_player.m_strength += m_cardDisplay.m_cardData.m_strengthBuff;
                     CardPlayed();
                 }
             }
-
-
         }
 
         if(Input.mousePosition.y < m_cardPlay.y)
@@ -275,6 +291,7 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
         m_handManager = FindFirstObjectByType<HandManager>();
 
         m_player.m_currentEnergy -= m_cardDisplay.m_cardData.m_cardCost;
+        GameManager.Instance.m_uIManager.UpdateText();
         m_handManager.m_cardsInHand.Remove(gameObject);
         m_handManager.UpdateHandVisuals();
         DiscardManager discardManager = FindFirstObjectByType<DiscardManager>();

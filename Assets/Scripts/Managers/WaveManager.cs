@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using ScriptableCard;
 using Unity.VisualScripting;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class WaveManager : MonoBehaviour
 {
@@ -11,20 +12,24 @@ public class WaveManager : MonoBehaviour
     private GameObject[] m_enemyPrefabs;
 
     [SerializeField]
+    private GameObject m_shopButton;
+
+    [SerializeField]
     private TextMeshProUGUI m_waveCounter;
 
     public List<GameObject> m_spawnedEnemies = new List<GameObject>();
     public List<GameObject> m_spawnLocation = new List<GameObject>();
+
     private int m_spawnedEnemiesLoop;
     private float m_amountOfEnemies;
 
     private HandManager m_handManager;
-    private DiscardManager m_discardManager;
 
+    private bool m_buttonSpawned;
     private void Start()
     {
         m_handManager = FindFirstObjectByType<HandManager>();
-        m_discardManager = FindFirstObjectByType<DiscardManager>();
+
         Spawner();
     }
 
@@ -34,14 +39,20 @@ public class WaveManager : MonoBehaviour
         {
             m_handManager.DiscardHand();
             GameManager.Instance.m_winScreen.SetActive(true);
+            GameManager.Instance.m_gameScreen.SetActive(false);
+            if(GameManager.Instance.m_currentWave % 5 == 0 && !m_buttonSpawned)
+            {
+                m_shopButton.SetActive(true);
+                m_buttonSpawned = true;
+            }
         }
+        
     }
 
     public void Spawner()
     {
-
         m_amountOfEnemies = 1 + Mathf.Round(GameManager.Instance.m_currentWave / 5);
-        if(m_amountOfEnemies > 4)
+        if (m_amountOfEnemies > 4)
         {
             m_amountOfEnemies = 4;
         }
@@ -57,6 +68,7 @@ public class WaveManager : MonoBehaviour
             m_spawnedEnemies.Add(enemySpawned);
         }
         GameManager.Instance.m_winScreen.SetActive(false);
+        m_buttonSpawned = false;
     }
 
     public void RemoveFromList(GameObject enemy)

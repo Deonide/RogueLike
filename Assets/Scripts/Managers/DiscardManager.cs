@@ -63,7 +63,6 @@ public class DiscardManager : MonoBehaviour
     {
         if(m_discardCardsCount > 0)
         {
-            Debug.Log("add to deck");
             List<Card> cardsToReturn = new List<Card>(m_discardedCards);
             m_discardedCards.Clear();
             UpdateDiscardCount();

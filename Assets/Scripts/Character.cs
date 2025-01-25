@@ -1,35 +1,37 @@
+using TMPro;
 using UnityEngine;
 
-public class Character : MonoBehaviour
+public class Character : MonoBehaviour, IDamageble
 {
-    [SerializeField]
-    protected int m_currentHealth = 1;
+    [Header("Health")]
+    public int m_currentHealth = 1;
+    public int m_maxHealth = 50;
+    public int m_startingHealth = 50;
+    public int m_armor;
 
-    protected int m_armor;
-
+    [Header("Debuffs")]
+    public int m_poisonValue;
     public int m_weakValue;
     public int m_vulnerableValue;
     public bool m_isWeak;
     public bool m_isVulnerable;
 
-    public int m_poisonValue;
+    [Header("Buffs")]
     public int m_strength;
     public int m_utility;
 
-
-    void Update()
+    protected virtual void Update()
     {
-        if (m_weakValue > 0)
+        if (m_weakValue >= 1)
         {
             m_isWeak = true;
-
         }
         else
         {
             m_isWeak = false;
         }
 
-        if (m_vulnerableValue > 0)
+        if (m_vulnerableValue >= 1)
         {
             m_isVulnerable = true;
         }
@@ -39,19 +41,19 @@ public class Character : MonoBehaviour
         }
     }
 
-    public int Damage(int damage)
+    public virtual void Damage(int damage)
     {
         if (m_armor > 0)
         {
             damage -= m_armor;
-            m_armor -= damage;
-        }
-        m_currentHealth -= damage;
-/*        healthChangedEvent.Invoke(m_currentHealth);*/
-        Debug.Log("Health: " + m_currentHealth);
-        return damage;
-    }
+        }    
 
+        if(damage > 0)
+        {
+            m_currentHealth -= damage;
+            Debug.Log("Health: " + m_currentHealth);
+        }
+    }
 
 
     public void DebuffsActivate()
@@ -70,6 +72,4 @@ public class Character : MonoBehaviour
             m_vulnerableValue -= 1;
         }
     }
-
-
 }

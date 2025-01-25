@@ -1,4 +1,4 @@
 interface IDamageble
 {
-    int Damage(int damage);
+    void Damage(int damage);
 }

@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using ScriptableCard;
+using System.Linq;
 
 public class HandManager : MonoBehaviour
 {
@@ -42,16 +43,16 @@ public class HandManager : MonoBehaviour
 
     public void DiscardHand()
     {
-        foreach (GameObject game in m_cardsInHand)
+        DiscardManager discardManager = FindFirstObjectByType<DiscardManager>();
+
+        while (m_cardsInHand.Count > 0)
         {
-            m_cardsInHand.Remove(game);
-            UpdateHandVisuals();
-            DiscardManager discardManager = FindFirstObjectByType<DiscardManager>();
-            discardManager.AddToDiscard(game.GetComponent<CardDisplay>().m_cardData);
-            Destroy(game);
+            //Adds the cards in hand to the discard and then empty's the hand
+            discardManager.AddToDiscard(m_cardsInHand.ElementAt(0).GetComponent<CardDisplay>().m_cardData);
+            Destroy(m_cardsInHand.ElementAt(0));
+            m_cardsInHand.RemoveAt(0);
             UpdateHandVisuals();
         }
-
     }
 
     public void BattleSetup(int setMaxHandSize)

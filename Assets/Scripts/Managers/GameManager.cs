@@ -1,4 +1,7 @@
+using System.Collections;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
@@ -6,7 +9,14 @@ public class GameManager : MonoBehaviour
     public OptionsManager m_optionsManager { get; private set; }
     public AudioManager m_audioManager { get; private set; }
     public DeckManager m_deckManager { get; private set; }
+    public UIManager m_uIManager { get; private set; }
+    public LootManager m_lootManager { get; private set; }
+
+    private ShopManager m_shopManager;
     private DrawPileManager m_drawPileManager;
+    private WaveManager m_waveManager;
+
+    private EnemyBase m_enemyBase;
     private Player m_player;
     public bool m_playerTurn = true;
     public bool m_managersSet;
@@ -15,6 +25,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject m_winScreen;
     public GameObject m_loseScreen;
+    public GameObject m_gameScreen;
 
     #region Initialize
     private void Awake()
@@ -29,7 +40,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
+        
         m_player = FindFirstObjectByType<Player>();
         m_winScreen.SetActive(false);
         m_loseScreen.SetActive(false);
@@ -40,8 +51,11 @@ public class GameManager : MonoBehaviour
         m_optionsManager = GetComponentInChildren<OptionsManager>();
         m_audioManager = GetComponentInChildren<AudioManager>();
         m_deckManager = GetComponentInChildren<DeckManager>();
-        m_drawPileManager = FindFirstObjectByType<DrawPileManager>();
+        m_uIManager = GetComponentInChildren<UIManager>();
+        m_lootManager = GetComponentInChildren<LootManager>();
 
+        m_drawPileManager = FindFirstObjectByType<DrawPileManager>();
+        m_waveManager = FindFirstObjectByType<WaveManager>();
         if (m_optionsManager == null)
         {
             GameObject prefab = Resources.Load<GameObject>("Prefabs/OptionsManager");
@@ -88,22 +102,33 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    #region Turns
     public void EndTurn()
-    {
+    { 
         m_player.DebuffsActivate();
+        StartCoroutine(EnemyAttack());
     }
 
-    public void EnemyTurn()
+    private IEnumerator EnemyAttack()
     {
-        m_playerTurn = false;
-
+        for (int i = 0; i < m_waveManager.m_spawnedEnemies.Count; i++)
+        {
+            m_enemyBase = m_waveManager.m_spawnedEnemies.ElementAt(i).GetComponent<EnemyBase>();
+            m_enemyBase.DebuffsActivate();
+            m_enemyBase.UseAbility();
+            m_enemyBase.AbilityToUse();
+            yield return new WaitForSeconds(1);
+        }
+        m_player.StartPlayerTurn();
     }
-
+    #endregion
     public void ResetWorld()
     {
         m_drawPileManager.ResetDeck();
         m_drawPileManager.MakeDrawPile(m_drawPileManager.m_starterDeck);
         m_player.ResetPlayerValues();
         m_currentWave = 0;
+        m_loseScreen.SetActive(false);
+        
     }
 }
