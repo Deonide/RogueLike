@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class Character : MonoBehaviour, IDamageble
 {
+    [Header("Animator")]
+    public Animator m_animator;
+
     [Header("Health")]
     public int m_currentHealth = 1;
     public int m_maxHealth = 50;
@@ -19,6 +22,11 @@ public class Character : MonoBehaviour, IDamageble
     [Header("Buffs")]
     public int m_strength;
     public int m_utility;
+
+    protected virtual void Awake()
+    {
+        m_animator = GetComponent<Animator>();
+    }
 
     protected virtual void Update()
     {
@@ -53,6 +61,7 @@ public class Character : MonoBehaviour, IDamageble
             m_currentHealth -= damage;
             Debug.Log("Health: " + m_currentHealth);
         }
+        m_animator.SetTrigger("Damage");
     }
 
 

@@ -12,7 +12,7 @@ public class WaveManager : MonoBehaviour
     private GameObject[] m_enemyPrefabs;
 
     [SerializeField]
-    private GameObject m_shopButton;
+    private GameObject m_shopButton, m_cardDropButton;
 
     [SerializeField]
     private TextMeshProUGUI m_waveCounter;
@@ -21,11 +21,12 @@ public class WaveManager : MonoBehaviour
     public List<GameObject> m_spawnLocation = new List<GameObject>();
 
     private int m_spawnedEnemiesLoop;
-    private float m_amountOfEnemies;
+    public float m_amountOfEnemies;
 
     private HandManager m_handManager;
 
     private bool m_buttonSpawned;
+
     private void Start()
     {
         m_handManager = FindFirstObjectByType<HandManager>();
@@ -40,6 +41,11 @@ public class WaveManager : MonoBehaviour
             m_handManager.DiscardHand();
             GameManager.Instance.m_winScreen.SetActive(true);
             GameManager.Instance.m_gameScreen.SetActive(false);
+            if (!m_buttonSpawned)
+            {
+                m_cardDropButton.SetActive(true);
+                m_buttonSpawned = true;
+            }
             if(GameManager.Instance.m_currentWave % 5 == 0 && !m_buttonSpawned)
             {
                 m_shopButton.SetActive(true);
@@ -61,12 +67,12 @@ public class WaveManager : MonoBehaviour
         WaveCounter();
         for (m_spawnedEnemiesLoop = 0; m_spawnedEnemiesLoop < m_amountOfEnemies; m_spawnedEnemiesLoop++)
         {
-
             int randomSpawn = Random.Range(0, m_enemyPrefabs.Length);
             GameObject enemyToSpawn = m_enemyPrefabs[randomSpawn];
             GameObject enemySpawned = Instantiate(enemyToSpawn, m_spawnLocation[m_spawnedEnemiesLoop].transform.position, Quaternion.identity);
             m_spawnedEnemies.Add(enemySpawned);
         }
+
         GameManager.Instance.m_winScreen.SetActive(false);
         m_buttonSpawned = false;
     }

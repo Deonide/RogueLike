@@ -1,0 +1,624 @@
+fileFormatVersion: 2
+guid: 620520f020ef9e74c82744774a9100ae
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6881430050818786973
+    second: Goblin._death_0
+  - first:
+      213: 7967006797207444656
+    second: Goblin._death_1
+  - first:
+      213: -7186905294211652155
+    second: Goblin._death_2
+  - first:
+      213: -1667326024896885641
+    second: Goblin._death_3
+  - first:
+      213: 5742589853299239320
+    second: Goblin._death_4
+  - first:
+      213: -2609268115603784506
+    second: Goblin._death_5
+  - first:
+      213: -1036718590965265724
+    second: Goblin._death_6
+  - first:
+      213: 757967859730251563
+    second: Goblin._death_7
+  - first:
+      213: -399956198775653964
+    second: Goblin._death_8
+  - first:
+      213: -1604711990234501608
+    second: Goblin._death_9
+  - first:
+      213: 2727063057607603250
+    second: Goblin._death_10
+  - first:
+      213: 7498445016741178924
+    second: Goblin._death_11
+  - first:
+      213: 6932869834895822482
+    second: Goblin._death_12
+  - first:
+      213: 1580696266872948130
+    second: Goblin._death_13
+  - first:
+      213: -2221505606137522854
+    second: Goblin._death_14
+  - first:
+      213: -2456999814919421136
+    second: Goblin._death_15
+  - first:
+      213: 8441842250205818861
+    second: Goblin._death_16
+  - first:
+      213: 8865443688223442957
+    second: Goblin._death_17
+  - first:
+      213: 988066189389401982
+    second: Goblin._death_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Goblin._death_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 2
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3697f3204df3080a0800000000000000
+      internalID: -6881430050818786973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin._death_1
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 2
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bc1ca6987e709e60800000000000000
+      internalID: 7967006797207444656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin._death_2
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 2
+        width: 31
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c5e32876bbf24c90800000000000000
+      internalID: -7186905294211652155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin._death_3
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 2
+        width: 31
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77cc14170d77cd8e0800000000000000
+      internalID: -1667326024896885641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin._death_4
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 2
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 899e9a8cb07c1bf40800000000000000
+      internalID: 5742589853299239320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin._death_5
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 2
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ccfead29740acbd0800000000000000
+      internalID: -2609268115603784506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin._death_6
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 3
+        width: 31
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cac87d2fe5dc91f0800000000000000
+      internalID: -1036718590965265724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin._death_7
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 3
+        width: 31
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2f7266a0c7d48a00800000000000000
+      internalID: 757967859730251563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin._death_8
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 2
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b9f24ec4f1137af0800000000000000
+      internalID: -399956198775653964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin._death_9
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 2
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81e234f62faeab9e0800000000000000
+      internalID: -1604711990234501608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin._death_10
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 3
+        width: 34
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 234baccf66978d520800000000000000
+      internalID: 2727063057607603250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin._death_11
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 1
+        width: 34
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2ee7a6a304df0860800000000000000
+      internalID: 7498445016741178924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin._death_12
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 2
+        width: 34
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29e8cf60260863060800000000000000
+      internalID: 6932869834895822482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin._death_13
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 1
+        width: 34
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a58fbc31e2cfe510800000000000000
+      internalID: 1580696266872948130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin._death_14
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 1
+        width: 34
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5552a7db60ab21e0800000000000000
+      internalID: -2221505606137522854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin._death_15
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 1
+        width: 34
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0330782afabf6edd0800000000000000
+      internalID: -2456999814919421136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin._death_16
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 1
+        width: 34
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: defe66dbcc2772570800000000000000
+      internalID: 8441842250205818861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin._death_17
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 1
+        width: 34
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0889c43012680b70800000000000000
+      internalID: 8865443688223442957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin._death_18
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 1
+        width: 34
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7f0129d6f056bd00800000000000000
+      internalID: 988066189389401982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Goblin._death_0: -6881430050818786973
+      Goblin._death_1: 7967006797207444656
+      Goblin._death_10: 2727063057607603250
+      Goblin._death_11: 7498445016741178924
+      Goblin._death_12: 6932869834895822482
+      Goblin._death_13: 1580696266872948130
+      Goblin._death_14: -2221505606137522854
+      Goblin._death_15: -2456999814919421136
+      Goblin._death_16: 8441842250205818861
+      Goblin._death_17: 8865443688223442957
+      Goblin._death_18: 988066189389401982
+      Goblin._death_2: -7186905294211652155
+      Goblin._death_3: -1667326024896885641
+      Goblin._death_4: 5742589853299239320
+      Goblin._death_5: -2609268115603784506
+      Goblin._death_6: -1036718590965265724
+      Goblin._death_7: 757967859730251563
+      Goblin._death_8: -399956198775653964
+      Goblin._death_9: -1604711990234501608
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

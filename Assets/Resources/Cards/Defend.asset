@@ -23,5 +23,7 @@ MonoBehaviour:
   m_poisonValue: 0
   m_weak: 0
   m_vulnerable: 0
+  m_strengthBuff: 0
+  m_utilityBuff: 0
   m_shopValue: 0
-  m_cardSprite: {fileID: 0}
+  m_cardSprite: {fileID: 4186605227744065309, guid: 884a4f99264a2d649b03c4440512d32c, type: 3}

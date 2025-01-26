@@ -268,6 +268,7 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
                         enemyScript.m_vulnerableValue += m_cardData.m_vulnerable;
                         CardPlayed();
                     }
+                    m_player.m_animator.SetTrigger("Attack");
                 }
 
                 else if (hit.collider != null && hit.collider.CompareTag("Player") && m_cardDisplay.m_cardData.m_cardType == CardType.Utility)

@@ -14,10 +14,11 @@ public class GameManager : MonoBehaviour
 
     private ShopManager m_shopManager;
     private DrawPileManager m_drawPileManager;
-    private WaveManager m_waveManager;
-
     private EnemyBase m_enemyBase;
-    private Player m_player;
+
+    public WaveManager m_waveManager;
+    public Player m_player;
+
     public bool m_playerTurn = true;
     public bool m_managersSet;
 

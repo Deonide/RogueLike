@@ -3,6 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using TMPro;
 using static UnityEngine.RuleTile.TilingRuleOutput;
+using System.Collections;
 
 public class EnemyBase : Character
 {
@@ -19,8 +20,9 @@ public class EnemyBase : Character
     public int m_spikeValue;
     private int m_abilityToUse;
 
-    protected virtual void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         m_player = FindFirstObjectByType<Player>();
 
         if (GameManager.Instance.m_currentWave <= 25)
@@ -59,9 +61,14 @@ public class EnemyBase : Character
 
         if (m_currentHealth <= 0)
         {
-            m_waveManager.RemoveFromList(this.gameObject);
-            Destroy(gameObject);
+            m_animator.SetTrigger("Deaded");
         }
+    }
+
+    private void AnimationOver()
+    {
+        m_waveManager.RemoveFromList(this.gameObject);
+        Destroy(gameObject);
     }
 
     public void IncreaseArmor(int armorIncrease)

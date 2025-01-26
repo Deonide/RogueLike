@@ -18,7 +18,8 @@ public class UIManager : MonoBehaviour
     public TMP_Text m_energyUpgradeCost, m_healthUpgradeCost;
 
     private Player m_player;
-    void Start()
+
+    private void Awake()
     {
         m_player = FindFirstObjectByType<Player>();
     }

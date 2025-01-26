@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ScriptableCard;
 using UnityEngine;
 using System.Linq;
+using TMPro;
 
 public class LootManager : MonoBehaviour
 {
@@ -28,11 +29,16 @@ public class LootManager : MonoBehaviour
     [SerializeField]
     private List<Card> m_legendaryCards;
 
+    [Header("Buttons")]
+    [SerializeField]
+    private GameObject[] m_button;
+
     private GameObject m_spawnedCard;
 
     private int m_rarityDrop;
     private int m_cardsToDrop = 3;
     private int m_GoldToDrop;
+
     public void RarityCheck()
     {
         for (int i = 0; i < m_cardsToDrop; i++)
@@ -61,6 +67,18 @@ public class LootManager : MonoBehaviour
                 UpdateCardData(m_spawnedCard, m_legendaryCards.ElementAt(cardToDrop));
             }
         }
+
+        foreach(GameObject button in m_button)
+        {
+            button.SetActive(true);
+        }
+    }
+
+    public void MoneyDrop()
+    {
+        m_GoldToDrop = Mathf.RoundToInt(15 * GameManager.Instance.m_waveManager.m_amountOfEnemies);
+        GameManager.Instance.m_player.m_money += m_GoldToDrop;
+        GameManager.Instance.m_uIManager.UpdateText();
     }
 
     private void UpdateCardData(GameObject game, Card cardData)

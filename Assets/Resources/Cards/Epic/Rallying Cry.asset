@@ -27,4 +27,4 @@ MonoBehaviour:
   m_strengthBuff: 0
   m_utilityBuff: 1
   m_shopValue: 150
-  m_cardSprite: {fileID: 0}
+  m_cardSprite: {fileID: -8650922969388972069, guid: 10ac9d8e0d96e7c4f8cf9891b4ea0ee9, type: 3}

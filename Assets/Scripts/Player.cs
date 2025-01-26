@@ -55,6 +55,7 @@ public class Player : Character
         base.Update();
         if(m_currentHealth <= 0)
         {
+            m_animator.SetTrigger("Deaded");
             GameManager.Instance.m_loseScreen.SetActive(true);
         }
     }
