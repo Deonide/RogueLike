@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fortified Shield
   m_EditorClassIdentifier: 
   m_cardName: Fortified Shield
-  m_cardDescription: Gain a lot of armor(20)
+  m_cardDescription: Gain a lot of armor $armor
   m_cardType: 1
   m_cardSecondaryType: 1
   m_cardRarity: 1

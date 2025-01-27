@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Demoralizing Strike
   m_EditorClassIdentifier: 
   m_cardName: Demoralizing Strike
-  m_cardDescription: Attack(7) and demoralize the target (Weak 1)
+  m_cardDescription: Attack $damage and demoralize the target (Weak 1)
   m_cardType: 0
   m_cardSecondaryType: 4
   m_cardRarity: 0

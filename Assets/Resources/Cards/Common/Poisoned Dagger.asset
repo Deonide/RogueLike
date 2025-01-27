@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Poisoned Dagger
   m_EditorClassIdentifier: 
   m_cardName: Poison Strike
-  m_cardDescription: Deal 4 damage and apply 2 poison.
+  m_cardDescription: ' Deal $damage damage, and poison $poison the target'
   m_cardType: 0
   m_cardSecondaryType: 3
   m_cardRarity: 0

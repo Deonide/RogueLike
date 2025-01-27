@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 6090094016640809927}
   - component: {fileID: -7018869274557934390}
   m_Layer: 7
-  m_Name: Armodillo
+  m_Name: Armadillo
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

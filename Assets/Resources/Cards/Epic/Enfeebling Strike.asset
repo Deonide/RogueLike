@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Enfeebling Strike
   m_EditorClassIdentifier: 
   m_cardName: Enfeebling Strike
-  m_cardDescription: Attack that deals 8 damage, and weakens the enemy for 3 turns.
+  m_cardDescription: Attack that deals $damage damage, and weakens the enemy for
+    3 turns.
   m_cardType: 0
   m_cardSecondaryType: 4
   m_cardRarity: 2

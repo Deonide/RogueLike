@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Precise Strike
   m_EditorClassIdentifier: 
   m_cardName: Precise Strike
-  m_cardDescription: A focused attack that deals 12 damage
+  m_cardDescription: A focused attack that deals $damage damage
   m_cardType: 0
   m_cardSecondaryType: 0
   m_cardRarity: 1

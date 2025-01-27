@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Toxic Grenade
   m_EditorClassIdentifier: 
   m_cardName: Toxic Grenade
-  m_cardDescription: A heavy blast next to the target dealing 20 damage and applying
-    poison(7)
+  m_cardDescription: A heavy blast next to the target dealing $damage damage and
+    applying poison $poison
   m_cardType: 0
   m_cardSecondaryType: 3
   m_cardRarity: 2

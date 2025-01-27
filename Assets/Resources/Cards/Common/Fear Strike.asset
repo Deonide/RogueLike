@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fear Strike
   m_EditorClassIdentifier: 
   m_cardName: Fear Strike
-  m_cardDescription: Attack that terrify's the enemy, which weakens it
+  m_cardDescription: Attack $damage that terrify's the enemy, which weakens it (2)
   m_cardType: 0
   m_cardSecondaryType: 4
   m_cardRarity: 0

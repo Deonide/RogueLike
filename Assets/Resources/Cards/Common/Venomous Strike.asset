@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Venomous Strike
   m_EditorClassIdentifier: 
   m_cardName: Venomous Strike
-  m_cardDescription: Deal 6 damage, and apply 5 Poison
+  m_cardDescription: Deal $damage damage, and apply $poison Poison
   m_cardType: 0
   m_cardSecondaryType: 3
   m_cardRarity: 0

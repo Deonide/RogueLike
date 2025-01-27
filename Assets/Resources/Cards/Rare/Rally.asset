@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rally
   m_EditorClassIdentifier: 
   m_cardName: Rally
-  m_cardDescription: Gain 8 armor, and boosting your further armor gain (1)
+  m_cardDescription: Gain $armor armor, and boosting your further armor gain (1)
   m_cardType: 1
   m_cardSecondaryType: 2
   m_cardRarity: 1

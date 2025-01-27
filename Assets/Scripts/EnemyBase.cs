@@ -93,12 +93,15 @@ public class EnemyBase : Character
         switch(m_abilityToUse)
         {
             case 0:
+                m_animator.SetTrigger("Attack");
                 UseAbilityOne();
                 break;
             case 1:
+                m_animator.SetTrigger("Attack");
                 UseAbilityTwo();
                 break;
             case 2:
+                m_animator.SetTrigger("Attack");
                 UseAbilityThree();
                 break;
         }

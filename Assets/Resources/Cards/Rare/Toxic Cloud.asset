@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Toxic Cloud
   m_EditorClassIdentifier: 
   m_cardName: Toxic Cloud
-  m_cardDescription: Apply 12 Poison to an enemy
+  m_cardDescription: Apply $poison Poison to an enemy
   m_cardType: 2
   m_cardSecondaryType: 3
   m_cardRarity: 1

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Iron Resolve
   m_EditorClassIdentifier: 
   m_cardName: Iron Resolve
-  m_cardDescription: Gain 15 Armor
+  m_cardDescription: Gain $armor Armor
   m_cardType: 1
   m_cardSecondaryType: 1
   m_cardRarity: 2

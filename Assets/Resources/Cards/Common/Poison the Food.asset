@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Poison the Food
   m_EditorClassIdentifier: 
   m_cardName: Poison the Food
-  m_cardDescription: Apply 6 poison
+  m_cardDescription: Apply $poison poison
   m_cardType: 2
   m_cardSecondaryType: 3
   m_cardRarity: 0

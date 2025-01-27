@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Shield Wall
   m_EditorClassIdentifier: 
   m_cardName: Shield Wall
-  m_cardDescription: Gain 30 Armor
+  m_cardDescription: Gain $armor Armor
   m_cardType: 1
   m_cardSecondaryType: 0
   m_cardRarity: 3

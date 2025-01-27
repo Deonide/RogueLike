@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Venom Blast
   m_EditorClassIdentifier: 
   m_cardName: Venom Blast
-  m_cardDescription: A poisonous blast(12) which leaves the enemy poisoned(6)
+  m_cardDescription: A poisonous blast $damage which leaves the enemy poisoned $poison
   m_cardType: 0
   m_cardSecondaryType: 3
   m_cardRarity: 0

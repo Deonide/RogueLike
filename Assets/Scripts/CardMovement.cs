@@ -222,13 +222,14 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
                         {
                             //If the enemy is vulnerable it takes 25% more damage.
                             int damage = Mathf.RoundToInt((m_cardDisplay.m_cardData.m_cardDamage + m_player.m_strength) * 1.25f);
+                            m_cardData.GetDescription();
                             enemyScript.Damage(damage);
                         }
                         else if(m_player.m_isWeak == true )
                         {
                             //If the player is weak the player deals 25% less damage.
                             int damage = Mathf.RoundToInt((m_cardDisplay.m_cardData.m_cardDamage + m_player.m_strength) * 0.75f);
-                            Debug.Log(damage);
+                            m_cardDisplay.m_cardData.GetDescription();
                             enemyScript.Damage(damage);
                         }
                         else
@@ -268,7 +269,7 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
                         enemyScript.m_vulnerableValue += m_cardData.m_vulnerable;
                         CardPlayed();
                     }
-                    m_player.m_animator.SetTrigger("Attack");
+
                 }
 
                 else if (hit.collider != null && hit.collider.CompareTag("Player") && m_cardDisplay.m_cardData.m_cardType == CardType.Utility)
@@ -292,6 +293,7 @@ public class CardMovement : MonoBehaviour, IDragHandler, IPointerDownHandler, IP
         m_handManager = FindFirstObjectByType<HandManager>();
 
         m_player.m_currentEnergy -= m_cardDisplay.m_cardData.m_cardCost;
+        m_player.m_animator.SetTrigger("Attack");
         GameManager.Instance.m_uIManager.UpdateText();
         m_handManager.m_cardsInHand.Remove(gameObject);
         m_handManager.UpdateHandVisuals();

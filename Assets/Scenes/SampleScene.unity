@@ -1845,71 +1845,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1434467944}
   m_CullTransparentMesh: 1
---- !u!1001 &1441321582
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4254603945116373221, guid: c05b05c306837114ba37a9dd768bf683, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 4254603945116373221, guid: c05b05c306837114ba37a9dd768bf683, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 4254603945116373221, guid: c05b05c306837114ba37a9dd768bf683, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4254603945116373221, guid: c05b05c306837114ba37a9dd768bf683, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4254603945116373221, guid: c05b05c306837114ba37a9dd768bf683, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4254603945116373221, guid: c05b05c306837114ba37a9dd768bf683, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4254603945116373221, guid: c05b05c306837114ba37a9dd768bf683, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4254603945116373221, guid: c05b05c306837114ba37a9dd768bf683, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4254603945116373221, guid: c05b05c306837114ba37a9dd768bf683, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4254603945116373221, guid: c05b05c306837114ba37a9dd768bf683, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6090094016640809927, guid: c05b05c306837114ba37a9dd768bf683, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: ab34a060394cbbf43bc0ece378550b78, type: 2}
-    - target: {fileID: 6348946237345047861, guid: c05b05c306837114ba37a9dd768bf683, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -1371722995746006006, guid: 9cd96c56c1b77cc4e97baafc45d75df1, type: 3}
-    - target: {fileID: 8414014390710062903, guid: c05b05c306837114ba37a9dd768bf683, type: 3}
-      propertyPath: m_Name
-      value: Bard
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c05b05c306837114ba37a9dd768bf683, type: 3}
 --- !u!1 &1449398357 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 969850227668372416, guid: 155e36527274e3641a55ae064178b534, type: 3}
@@ -2124,11 +2059,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_enemyPrefabs:
-  - {fileID: 8414014390710062903, guid: 7b599c839177d024da54433ef13fdf50, type: 3}
-  - {fileID: 8414014390710062903, guid: c05b05c306837114ba37a9dd768bf683, type: 3}
-  - {fileID: 8414014390710062903, guid: 44c4ae86a28329c44bf5150a971755fc, type: 3}
   - {fileID: 8414014390710062903, guid: 89497ec72a13d5d48b7c2dec81f87017, type: 3}
   - {fileID: 8414014390710062903, guid: eb40fd23c72d03b498f51eb3f34d3c67, type: 3}
+  - {fileID: 8414014390710062903, guid: 44c4ae86a28329c44bf5150a971755fc, type: 3}
+  - {fileID: 8414014390710062903, guid: c05b05c306837114ba37a9dd768bf683, type: 3}
   m_shopButton: {fileID: 1067412323}
   m_cardDropButton: {fileID: 798747165}
   m_waveCounter: {fileID: 1615715485}
@@ -2484,7 +2418,7 @@ MonoBehaviour:
   m_startingHealth: 50
   m_armor: 0
   m_poisonValue: 0
-  m_weakValue: 0
+  m_weakValue: 1
   m_vulnerableValue: 0
   m_isWeak: 0
   m_isVulnerable: 0
@@ -2575,7 +2509,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1464944235431179117, guid: 155e36527274e3641a55ae064178b534, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2083938855841020379, guid: 155e36527274e3641a55ae064178b534, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3135,4 +3069,3 @@ SceneRoots:
   - {fileID: 727911102185779558}
   - {fileID: 1787227356}
   - {fileID: 7258427787754778840}
-  - {fileID: 1441321582}

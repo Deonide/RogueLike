@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Swift Strike
   m_EditorClassIdentifier: 
   m_cardName: Swift Strike
-  m_cardDescription: A quick attack, that deals 8 damage
+  m_cardDescription: A quick attack, that deals $damage damage
   m_cardType: 0
   m_cardSecondaryType: 0
   m_cardRarity: 1

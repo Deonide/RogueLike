@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Corrosive Blast
   m_EditorClassIdentifier: 
   m_cardName: Corrosive Blast
-  m_cardDescription: Light attack(8) that poisons the target(5)
+  m_cardDescription: Light attack $damage that poisons the target $poison
   m_cardType: 0
   m_cardSecondaryType: 3
   m_cardRarity: 0

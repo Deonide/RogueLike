@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dad Joke
   m_EditorClassIdentifier: 
   m_cardName: Dad Joke
-  m_cardDescription: The enemy takes mental damage(8), and is left vulnerable(2)
+  m_cardDescription: The enemy takes mental damage $damage, and is left vulnerable(2)
   m_cardType: 0
   m_cardSecondaryType: 4
   m_cardRarity: 0

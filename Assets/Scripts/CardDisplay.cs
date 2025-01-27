@@ -43,7 +43,7 @@ public class CardDisplay : MonoBehaviour
         //Card type
         m_type.text = m_cardData.m_cardType.ToString();
         //Card description
-        m_description.text = m_cardData.m_cardDescription.ToString();
+        m_description.text = m_cardData.GetDescription(); // m_cardData.m_cardDescription.ToString();
         //Card image
         m_cardImage.sprite = m_cardData.m_cardSprite;
     }

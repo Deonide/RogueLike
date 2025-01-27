@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Acidic Blade
   m_EditorClassIdentifier: 
   m_cardName: Acidic Blade
-  m_cardDescription: 'Do a heavy attack(12), and apply poison (12) '
+  m_cardDescription: Do a heavy attack $damage, and apply poison $poison
   m_cardType: 0
   m_cardSecondaryType: 3
   m_cardRarity: 1

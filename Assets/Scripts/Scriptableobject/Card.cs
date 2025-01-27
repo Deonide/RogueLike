@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 
@@ -51,6 +52,27 @@ namespace ScriptableCard{
         public int m_shopValue;
 
         public Sprite m_cardSprite;
+
+        public string GetDescription()
+        {
+            string[] _words = m_cardDescription.Split(' ');
+            for(int i = 0; i < _words.Length; i++)
+            {
+                switch(_words[i])
+                {
+                    case "$damage":
+                        _words[i] = m_cardDamage.ToString();
+                        break;
+                    case "$armor":
+                        _words[i] = m_cardArmor.ToString();
+                        break;
+                    case "$poison":
+                        _words[i] = m_poisonValue.ToString();
+                        break;
+                }
+            }
+            return string.Join(' ', _words);
+        }
     }
 }
 

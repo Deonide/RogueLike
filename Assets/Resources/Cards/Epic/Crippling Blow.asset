@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Crippling Blow
   m_EditorClassIdentifier: 
   m_cardName: Crippling blow
-  m_cardDescription: Strong attack that deals 10 damage, and apply 2 weak
+  m_cardDescription: Strong attack that deals $damage damage, and apply 2 weak
   m_cardType: 0
   m_cardSecondaryType: 4
   m_cardRarity: 2

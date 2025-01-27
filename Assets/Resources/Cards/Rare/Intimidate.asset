@@ -15,7 +15,7 @@ MonoBehaviour:
   m_cardName: Intimidate
   m_cardDescription: Weaken an enemy
   m_cardType: 2
-  m_cardSecondaryType: 4
+  m_cardSecondaryType: 0
   m_cardRarity: 1
   m_cardCost: 1
   m_cardDamage: 0

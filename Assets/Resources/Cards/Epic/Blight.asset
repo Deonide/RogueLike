@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Blight
   m_EditorClassIdentifier: 
   m_cardName: Blight
-  m_cardDescription: Leaves the enemy poisoned(10)
+  m_cardDescription: Leaves the enemy poisoned $poison
   m_cardType: 2
   m_cardSecondaryType: 4
   m_cardRarity: 2

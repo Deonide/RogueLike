@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fortify
   m_EditorClassIdentifier: 
   m_cardName: Fortify
-  m_cardDescription: Gain 12 Armor
+  m_cardDescription: Gain $armor Armor
   m_cardType: 1
   m_cardSecondaryType: 1
   m_cardRarity: 0

@@ -30,7 +30,7 @@ public class WaveManager : MonoBehaviour
     private void Start()
     {
         m_handManager = FindFirstObjectByType<HandManager>();
-
+        m_shopButton.SetActive(false);
         Spawner();
     }
 
@@ -43,16 +43,15 @@ public class WaveManager : MonoBehaviour
             GameManager.Instance.m_gameScreen.SetActive(false);
             if (!m_buttonSpawned)
             {
+                Debug.Log(GameManager.Instance.m_currentWave % 1 == 0);
                 m_cardDropButton.SetActive(true);
-                m_buttonSpawned = true;
-            }
-            if(GameManager.Instance.m_currentWave % 5 == 0 && !m_buttonSpawned)
-            {
-                m_shopButton.SetActive(true);
+                if(GameManager.Instance.m_currentWave % 1 == 0)
+                {
+                    m_shopButton.SetActive(true);
+                }
                 m_buttonSpawned = true;
             }
         }
-        
     }
 
     public void Spawner()

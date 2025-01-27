@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sappling Blow
   m_EditorClassIdentifier: 
   m_cardName: Sappling Blow
-  m_cardDescription: Strike(9) that weakens the Enemy(3)
+  m_cardDescription: Strike $damage that weakens the Enemy(2)
   m_cardType: 0
   m_cardSecondaryType: 4
   m_cardRarity: 1

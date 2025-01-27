@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Toxic Barrage
   m_EditorClassIdentifier: 
   m_cardName: Toxic Barrage
-  m_cardDescription: Heavy attack(10), that applies 5 Poison
+  m_cardDescription: Heavy attack $damage, that applies $poison Poison
   m_cardType: 0
   m_cardSecondaryType: 3
   m_cardRarity: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rallying Cry
   m_EditorClassIdentifier: 
   m_cardName: Rallying Cry
-  m_cardDescription: You give out a loud cry which grants you armor(12), and which
+  m_cardDescription: You give out a loud cry which grants you armor $armor, and which
     buffs further armor gained
   m_cardType: 1
   m_cardSecondaryType: 2

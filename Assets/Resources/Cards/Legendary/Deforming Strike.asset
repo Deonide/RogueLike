@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Deforming Strike
   m_EditorClassIdentifier: 
   m_cardName: Deforming Strike
-  m_cardDescription: You hit the foe with a strike(15), that leaves it vulnerable(2)
+  m_cardDescription: You hit the foe with a strike $damage, that leaves it vulnerable(2)
   m_cardType: 0
   m_cardSecondaryType: 0
   m_cardRarity: 0
