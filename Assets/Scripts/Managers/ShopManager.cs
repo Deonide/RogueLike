@@ -34,7 +34,10 @@ public class ShopManager : MonoBehaviour
 
     [Header("Buy Button")]
     [SerializeField]
-    private TMP_Text[] m_buyButton;
+    private GameObject[] m_buyButton;
+    [SerializeField]
+    private TMP_Text[] m_textButtons;
+
 
     private GameObject m_spawnedCard;
 
@@ -83,8 +86,8 @@ public class ShopManager : MonoBehaviour
                 int cardToDrop = Random.Range(0, m_legendaryCards.Count);
                 UpdateCardData(m_spawnedCard, m_legendaryCards.ElementAt(cardToDrop));
             }
-            m_buyButton[i].text = m_spawnedCard.GetComponent<CardDisplay>().m_cardData.m_shopValue.ToString();
-            
+            m_textButtons[i].text = m_spawnedCard.GetComponent<CardDisplay>().m_cardData.m_shopValue.ToString();
+            m_buyButton[i].SetActive(true);
         }
     }
 

@@ -2418,7 +2418,7 @@ MonoBehaviour:
   m_startingHealth: 50
   m_armor: 0
   m_poisonValue: 0
-  m_weakValue: 1
+  m_weakValue: 0
   m_vulnerableValue: 0
   m_isWeak: 0
   m_isVulnerable: 0
@@ -2953,7 +2953,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6827869262023945802, guid: 155e36527274e3641a55ae064178b534, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7420797762802433206, guid: 155e36527274e3641a55ae064178b534, type: 3}
       propertyPath: m_text
@@ -2988,25 +2988,53 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8058445496036339427, guid: 155e36527274e3641a55ae064178b534, type: 3}
+      propertyPath: m_textButtons.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8058445496036339427, guid: 155e36527274e3641a55ae064178b534, type: 3}
       propertyPath: 'm_buyButton.Array.data[0]'
       value: 
-      objectReference: {fileID: 248630398}
+      objectReference: {fileID: 978613046}
     - target: {fileID: 8058445496036339427, guid: 155e36527274e3641a55ae064178b534, type: 3}
       propertyPath: 'm_buyButton.Array.data[1]'
       value: 
-      objectReference: {fileID: 1736715471}
+      objectReference: {fileID: 1345634994}
     - target: {fileID: 8058445496036339427, guid: 155e36527274e3641a55ae064178b534, type: 3}
       propertyPath: 'm_buyButton.Array.data[2]'
       value: 
-      objectReference: {fileID: 502853420}
+      objectReference: {fileID: 1290006973}
     - target: {fileID: 8058445496036339427, guid: 155e36527274e3641a55ae064178b534, type: 3}
       propertyPath: 'm_buyButton.Array.data[3]'
       value: 
-      objectReference: {fileID: 300659272}
+      objectReference: {fileID: 2047049014}
     - target: {fileID: 8058445496036339427, guid: 155e36527274e3641a55ae064178b534, type: 3}
       propertyPath: 'm_buyButton.Array.data[4]'
       value: 
+      objectReference: {fileID: 366747847}
+    - target: {fileID: 8058445496036339427, guid: 155e36527274e3641a55ae064178b534, type: 3}
+      propertyPath: 'm_textButtons.Array.data[0]'
+      value: 
+      objectReference: {fileID: 248630398}
+    - target: {fileID: 8058445496036339427, guid: 155e36527274e3641a55ae064178b534, type: 3}
+      propertyPath: 'm_textButtons.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1736715471}
+    - target: {fileID: 8058445496036339427, guid: 155e36527274e3641a55ae064178b534, type: 3}
+      propertyPath: 'm_textButtons.Array.data[2]'
+      value: 
+      objectReference: {fileID: 502853420}
+    - target: {fileID: 8058445496036339427, guid: 155e36527274e3641a55ae064178b534, type: 3}
+      propertyPath: 'm_textButtons.Array.data[3]'
+      value: 
+      objectReference: {fileID: 300659272}
+    - target: {fileID: 8058445496036339427, guid: 155e36527274e3641a55ae064178b534, type: 3}
+      propertyPath: 'm_textButtons.Array.data[4]'
+      value: 
       objectReference: {fileID: 2022309669}
+    - target: {fileID: 8143033208878223846, guid: 155e36527274e3641a55ae064178b534, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8513649216072349384, guid: 155e36527274e3641a55ae064178b534, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 7
